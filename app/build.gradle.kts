@@ -13,7 +13,14 @@ android {
         versionCode = 1
         versionName = "1.0.0"
     }
-
+    signingConfigs {
+        create("sign") {
+            storeFile = rootProject.file("signing.jks")
+            keyAlias = "sora"
+            keyPassword = "1145141919"
+            storePassword = "1145141919"
+        }
+    }
     buildTypes {
         release {
             isMinifyEnabled = true
@@ -21,6 +28,10 @@ android {
                 getDefaultProguardFile("proguard-android.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("sign")
+        }
+        debug {
+            signingConfig = signingConfigs.getByName("sign")
         }
     }
     compileOptions {
