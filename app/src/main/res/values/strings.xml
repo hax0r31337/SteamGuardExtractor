@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SteamGuardExtractor</string>
+    <string name="xposed_desc">Extract SteamGuard shared_secret in seconds</string>
+</resources>
